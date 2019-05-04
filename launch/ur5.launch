@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+	<include file="$(find ur_gazebo)/launch/ur5_joint_limited.launch">
+		<arg name="gui" value="false"/>
+	</include>
+
+	<include file="$(find jps_traveler)/launch/viewer.launch"/>
+
+	<node pkg="rqt_gui" type="rqt_gui" name="rqt_gui" args="--perspective-file $(find jps_traveler)/jps_traveler.perspective" />
+	<!-- <node pkg="assignment1" type="camera" name="camera" output="screen"/> -->
+</launch>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- bring up ur5 -->
+	<include file="$(find ur_modern_driver)/launch/ur5_bringup_compatible.launch">
+		<arg name="robot_ip" value="172.22.22.2"/>
+	</include>
+	<include file="$(find jps_traveler)/launch/viewer.launch"/>
+
+	<node pkg="jps_traveler" type="trajectory" name="trajectory" output="screen" />
+
+	<!--  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find jps_traveler)/assignment1.rviz" required="true" />
+</launch>
