@@ -1,28 +1,30 @@
 <?xml version="1.0"?>
 <launch>
-	<!--<arg name="model" default="$(find assignment1)/urdf/ur5_robot.urdf" />-->
-	<!--<param name="robot_description" textfile="$(arg model)" />-->
 
-	<!--
+  <!--<arg name="model" default="$(find assignment1)/urdf/ur5_robot.urdf" />-->
+  <!--<param name="robot_description" textfile="$(arg model)" />-->
+
+  <!--
   <node
-	  name="robot_state_publisher"
-	  pkg="robot_state_publisher"
-	  type="robot_state_publisher"
-	  output="screen" >
-  </node> -->
-
-	<node
-		pkg="jps_traveler"
-		type="trajectory"
-		name="trajectory"
-		output="screen" >
-	</node>
-
-	<node
-		name="rviz"
-		pkg="rviz"
-		type="rviz"
-		args="-d $(find jps_traveler)/assignment1.rviz" required="true" >
-	</node>
-
+      name="robot_state_publisher" 
+      pkg="robot_state_publisher" 
+      type="robot_state_publisher" 
+      output="screen" >
+  </node>
+  -->
+  
+  <node 
+      pkg="traveler" 
+      type="trajectory"
+      name="trajectory"  
+      output="screen" >
+  </node>
+  
+  <node
+      name="rviz" 
+      pkg="rviz"
+      type="rviz"
+      args="-d $(find traveler)/assignment1.rviz" required="true" >
+  </node>
+  
 </launch>

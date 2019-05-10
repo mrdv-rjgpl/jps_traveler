@@ -24,7 +24,7 @@ namespace ur_kinematics {
     const double d6 =  0.0922;
     #endif
 
-   #define UR5_PARAMS
+    #define UR5_PARAMS
     #ifdef UR5_PARAMS
     const double d1 =  0.089159;
     const double a2 = -0.42500;
@@ -209,7 +209,7 @@ namespace ur_kinematics {
     double T02 = -*T; T++; double T00 =  *T; T++; double T01 =  *T; T++; double T03 = -*T; T++; 
     double T12 = -*T; T++; double T10 =  *T; T++; double T11 =  *T; T++; double T13 = -*T; T++; 
     double T22 =  *T; T++; double T20 = -*T; T++; double T21 = -*T; T++; double T23 =  *T;
-     ROS_INFO("line 210\n");
+    // ROS_INFO("line 210\n");
     ////////////////////////////// shoulder rotate joint (q1) //////////////////////////////
     double q1[2];
     {
@@ -363,7 +363,7 @@ namespace ur_kinematics {
             q_sols[num_sols*6+3] = q4[k];
              // ROS_INFO("line 357\n");
             q_sols[num_sols*6+4] = q5[i][j]; 
-            // ROS_INFO("line 359\n");
+            ROS_INFO("%f", q5[i][j]);
             q_sols[num_sols*6+5] = q6; 
             // ROS_INFO("line 361\n");
             // *q_sols=q1[i];
