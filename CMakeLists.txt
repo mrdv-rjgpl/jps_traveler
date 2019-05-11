@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(jps_traveler)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
- add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -16,7 +16,6 @@ find_package(catkin REQUIRED COMPONENTS
   robot_state_publisher
   dynamic_reconfigure
   ur_description
-  ur_kinematics
 )
 
 ## System dependencies are found with CMake's conventions
@@ -102,6 +101,7 @@ find_package(catkin REQUIRED COMPONENTS
 ###################################
 ## catkin specific configuration ##
 ###################################
+
 ## The catkin_package macro generates cmake config files for your package
 ## Declare things to be passed to dependent projects
 ## INCLUDE_DIRS: uncomment this if your package contains header files
@@ -110,7 +110,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES jps_traveler
+#  LIBRARIES traveler
 #  CATKIN_DEPENDS geometry_msgs roscpp rospy sensor_msgs tf
 #  DEPENDS system_lib
 )
@@ -128,7 +128,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/jps_traveler.cpp
+#   src/${PROJECT_NAME}/traveler.cpp
 # )
 
 ## Add cmake target dependencies of the library

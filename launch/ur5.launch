@@ -5,11 +5,11 @@
     <arg name="gui" value="false"/>
   </include>
 
-  <include file="$(find traveler)/launch/viewer.launch"/>
+  <include file="$(find jps_traveler)/launch/viewer.launch"/>
 
   <node pkg="rqt_gui"
 	type="rqt_gui"
 	name="rqt_gui"
-	args="--perspective-file $(find traveler)/traveler.perspective"/>
+	args="--perspective-file $(find jps_traveler)/traveler.perspective"/>
   <!-- <node pkg="assignment1" type="camera" name="camera" output="screen"/> -->
 </launch>
