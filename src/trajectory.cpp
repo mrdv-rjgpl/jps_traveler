@@ -175,9 +175,12 @@ actionlib::SimpleActionClient<control_msgs::FollowJointTrajectoryAction>* action
     }
   
 
-    std::cout<<"goal "<<q_goal<<std::endl;
-    std::cout<<"curr: "<<q_curr<<std::endl;
-
+    // std::cout<<"goal "<<q_goal<<std::endl;
+    // std::cout<<"curr: "<<q_curr<<std::endl;
+    ROS_INFO_STREAM("goal");
+    ROS_INFO_STREAM(q_goal);
+    ROS_INFO_STREAM("curr");
+    ROS_INFO_STREAM(q_curr);
 
     // This is the translation left for the trajectory
     
@@ -226,7 +229,8 @@ actionlib::SimpleActionClient<control_msgs::FollowJointTrajectoryAction>* action
     action_client->sendGoalAndWait(controlTrajectory);
     // action_client->waitForResult();
     // ros::Duration(2).sleep();
-    std::cout<<"after duration"<<std::endl;
+    // std::cout<<"after duration"<<std::endl;
+    ROS_INFO_STREAM("after duration");
     // delete q_sols;
     // delete T;
 
@@ -268,7 +272,7 @@ private:
   Eigen::Matrix<double,3,3> quat2rotm(tf::Quaternion q)
   {
     float qw=q.w(), qx=q.x(), qy=q.y(), qz=q.z();
-    std::cout<<qx<<" "<<qy<<" "<<qz<<" "<<qw<<std::endl;
+    // std::cout<<qx<<" "<<qy<<" "<<qz<<" "<<qw<<std::endl;
       Eigen::Matrix<double,3,3> R;
       R(0,0)=1-2*qy*qy-2*qz*qz;
       R(0,1)=2*qx*qy-2*qz*qw;
