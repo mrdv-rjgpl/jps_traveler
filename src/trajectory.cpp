@@ -15,7 +15,7 @@
 #include <actionlib/client/terminal_state.h>
 #include<control_msgs/FollowJointTrajectoryAction.h>
 #include <pr2_controllers_msgs/JointTrajectoryAction.h>
-
+#include<jps_traveler/MotionWithTime.h>
 #include <trajectory_msgs/JointTrajectory.h>
 #define PI 3.14159
 class Trajectory {
@@ -64,8 +64,9 @@ actionlib::SimpleActionClient<control_msgs::FollowJointTrajectoryAction>* action
   }
 
   // Main callback used when a new setpoint is received
-  void SetPoint( const geometry_msgs::Pose& goaltransform){
-
+  void SetPoint( const jps_traveler::MotionWithTime& goal_msg){
+    geometry_msgs::Pose goaltransform=goal_msg.pose;
+    int time=goal_msg.sec;
     double positionincrement = 1e-5; // how much we move between steps
 
     // The name of all the joints
@@ -200,7 +201,7 @@ actionlib::SimpleActionClient<control_msgs::FollowJointTrajectoryAction>* action
       trajectory_point.positions[i]=q_goal(i);
     }
     // std::cout<<"here"<<std::endl;
-    trajectory_point.time_from_start=ros::Duration(8);
+    trajectory_point.time_from_start=ros::Duration(time);
     trajectory.points.push_back(trajectory_point);
     // std::cout<<"here 2"<<std::endl;
 

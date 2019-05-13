@@ -19,7 +19,7 @@
   <node pkg="rqt_gui"
 	type="rqt_gui"
 	name="rqt_gui"
-	args="--perspective-file $(find jps_traveler)/traveler.perspective">
+	args="--perspective-file $(find jps_traveler)/jps_traveler.perspective">
   </node>
 
 
